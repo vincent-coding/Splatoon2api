@@ -1,6 +1,6 @@
 {
   "name": "splatoon2api",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "A very simple library to get some information about Splatoon 2, such as current maps, future maps, SplatNet Gear, information about the SalmonRun game mode.",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,16 @@
     "type": "git",
     "url": "git+https://github.com/vincent-coding/Splatoon2api.git"
   },
-  "author": "VCoding",
+  "author": {
+    "name": "VCoding",
+    "email": "vcoding@protonmail.ch"
+  },
+  "keywords": [
+    "splatoon",
+    "api",
+    "splatoon2",
+    "salmonrun"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/vincent-coding/Splatoon2api/issues"
