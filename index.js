@@ -309,22 +309,10 @@ class Client {
 		  					image: baseURL + json.details[0].stage.image
 		  				},
 		  				weapons: {
-		  					0: {
-		  						name: this.translation.weapons[json.details[0].weapons[0].id].name,
-			  					image: baseURL + json.details[0].weapons[0].weapon.image
-		  					},
-		  					1: {
-		  						name: this.translation.weapons[json.details[0].weapons[1].id].name,
-			  					image: baseURL + json.details[0].weapons[1].weapon.image
-		  					},
-		  					2: {
-		  						name: this.translation.weapons[json.details[0].weapons[2].id].name,
-			  					image: baseURL + json.details[0].weapons[2].weapon.image
-		  					},
-		  					3: {
-		  						name: this.translation.weapons[json.details[0].weapons[3].id].name,
-			  					image: baseURL + json.details[0].weapons[3].weapon.image
-		  					}
+		  					0: {},
+		  					1: {},
+		  					2: {},
+		  					3: {}
 		  				}
 		  			},
 		  			1: {
@@ -335,22 +323,10 @@ class Client {
 		  					image: baseURL + json.details[1].stage.image
 		  				},
 		  				weapons: {
-		  					0: {
-		  						name: this.translation.weapons[json.details[1].weapons[0].id].name,
-			  					image: baseURL + json.details[1].weapons[1].weapon.image
-		  					},
-		  					1: {
-		  						name: this.translation.weapons[json.details[1].weapons[1].id].name,
-			  					image: baseURL + json.details[1].weapons[1].weapon.image
-		  					},
-		  					2: {
-		  						name: this.translation.weapons[json.details[1].weapons[2].id].name,
-			  					image: baseURL + json.details[1].weapons[2].weapon.image
-		  					},
-		  					3: {
-		  						name: this.translation.weapons[json.details[1].weapons[3].id].name,
-			  					image: baseURL + json.details[1].weapons[3].weapon.image
-		  					}
+		  					0: {},
+		  					1: {},
+		  					2: {},
+		  					3: {}
 		  				}
 		  			}
 		  		}
@@ -376,7 +352,72 @@ class Client {
 		  				end_time: json.schedules[4].end_time,
 		  			}
 		  		}
-		  		return callback(data);
+				
+				if(!json.details[0].weapons[0].weapon) {
+					data.details[0].weapons[0].name  = this.translation.coop_special_weapons[json.details[0].weapons[0].coop_special_weapon.image].name;
+					data.details[0].weapons[0].image = baseURL + json.details[0].weapons[0].coop_special_weapon.image;
+				} else {
+					data.details[0].weapons[0].name  = this.translation.weapons[json.details[0].weapons[0].id].name;
+					data.details[0].weapons[0].image = baseURL + json.details[0].weapons[0].weapon.image;
+				}
+
+				if(!json.details[0].weapons[1].weapon) {
+					data.details[0].weapons[1].name  = this.translation.coop_special_weapons[json.details[0].weapons[1].coop_special_weapon.image].name;
+					data.details[0].weapons[1].image = baseURL + json.details[0].weapons[1].coop_special_weapon.image;
+				} else {
+					data.details[0].weapons[1].name  = this.translation.weapons[json.details[0].weapons[1].id].name;
+					data.details[0].weapons[1].image = baseURL + json.details[0].weapons[1].weapon.image;
+				}
+
+				if(!json.details[0].weapons[2].weapon) {
+					data.details[0].weapons[2].name  = this.translation.coop_special_weapons[json.details[0].weapons[2].coop_special_weapon.image].name;
+					data.details[0].weapons[2].image = baseURL + json.details[0].weapons[2].coop_special_weapon.image;
+				} else {
+					data.details[0].weapons[2].name  = this.translation.weapons[json.details[0].weapons[2].id].name;
+					data.details[0].weapons[2].image = baseURL + json.details[0].weapons[2].weapon.image;
+				}
+
+				if(!json.details[0].weapons[3].weapon) {
+					data.details[0].weapons[3].name  = this.translation.coop_special_weapons[json.details[0].weapons[3].coop_special_weapon.image].name;
+					data.details[0].weapons[3].image = baseURL + json.details[0].weapons[3].coop_special_weapon.image;
+				} else {
+					data.details[0].weapons[3].name  = this.translation.weapons[json.details[0].weapons[3].id].name;
+					data.details[0].weapons[3].image = baseURL + json.details[0].weapons[3].weapon.image;
+				}
+				
+				if(!json.details[1].weapons[0].weapon) {
+					data.details[1].weapons[0].name  = this.translation.coop_special_weapons[json.details[1].weapons[0].coop_special_weapon.image].name;
+					data.details[1].weapons[0].image = baseURL + json.details[1].weapons[0].coop_special_weapon.image;
+				} else {
+					data.details[1].weapons[0].name  = this.translation.weapons[json.details[1].weapons[0].id].name;
+					data.details[1].weapons[0].image = baseURL + json.details[1].weapons[0].weapon.image;
+				}
+
+				if(!json.details[1].weapons[1].weapon) {
+					data.details[1].weapons[1].name  = this.translation.coop_special_weapons[json.details[1].weapons[1].coop_special_weapon.image].name;
+					data.details[1].weapons[1].image = baseURL + json.details[1].weapons[1].coop_special_weapon.image;
+				} else {
+					data.details[1].weapons[1].name  = this.translation.weapons[json.details[1].weapons[1].id].name;
+					data.details[1].weapons[1].image = baseURL + json.details[1].weapons[1].weapon.image;
+				}
+
+				if(!json.details[1].weapons[2].weapon) {
+					data.details[1].weapons[2].name  = this.translation.coop_special_weapons[json.details[1].weapons[2].coop_special_weapon.image].name;
+					data.details[1].weapons[2].image = baseURL + json.details[1].weapons[2].coop_special_weapon.image;
+				} else {
+					data.details[1].weapons[2].name  = this.translation.weapons[json.details[1].weapons[2].id].name;
+					data.details[1].weapons[2].image = baseURL + json.details[1].weapons[2].weapon.image;
+				}
+
+				if(!json.details[1].weapons[3].weapon) {
+					data.details[1].weapons[3].name  = this.translation.coop_special_weapons[json.details[1].weapons[3].coop_special_weapon.image].name;
+					data.details[1].weapons[3].image = baseURL + json.details[1].weapons[3].coop_special_weapon.image;
+				} else {
+					data.details[1].weapons[3].name  = this.translation.weapons[json.details[1].weapons[3].id].name;
+					data.details[1].weapons[3].image = baseURL + json.details[1].weapons[3].weapon.image;
+				}
+
+				return callback(data);
 		  	});
 	}
 }
